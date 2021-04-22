@@ -34,18 +34,18 @@ print(f'{"CADASTRO":^80}')
 print('-' * 80)
 print(f'{"n°":<3}{"NOME":<10}{"ANO DE NASC":<15}{"CONTRATAÇÃO":<15}{"SALÁRIO":<10}{"CTPS":<10}{"CPF"}')
 print('-' * 80)
-for trabalhador in cadastro:
+for t in cadastro:
     print(f'\033[m{cont:<3}', end='')
-    print(f'{trabalhador["Nome"]:<10}', end='')
-    print(f'{trabalhador["Ano_nasc"]:<15}', end='')
-    if trabalhador['CTPS'] > 0:
-        print(f'{trabalhador["Contratação"]:<15}', end='')
-        print(f'{trabalhador["Salário"]:<10}', end='')
+    print(f'{t["Nome"]:<10}', end='')
+    print(f'{t["Ano_nasc"]:<15}', end='')
+    if t['CTPS'] > 0:
+        print(f'{t["Contratação"]:<15}', end='')
+        print(f'{t["Salário"]:<10}', end='')
     else:
         print(f'{"0":<15}', end='')
         print(f'{"0":<10}', end='')
-    print(f'{trabalhador["CTPS"]:<10}', end='')
-    print(f'{trabalhador["CPF"]}')
+    print(f'{t["CTPS"]:<10}', end='')
+    print(f'{t["CPF"]}')
     cont += 1
 while not qual_tra == 999:
     print('_' * 40)
