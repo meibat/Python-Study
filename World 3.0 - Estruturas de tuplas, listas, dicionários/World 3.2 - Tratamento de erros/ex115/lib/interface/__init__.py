@@ -28,6 +28,11 @@ def tur(msg):
 
 #Validação
 def leiaint(msg):
+    '''
+    -> Tenta ler o valor
+    :param msg: valor a ser lido
+    :return: o valor ou indica o erro
+    '''
     while True:
         try:
             n = int(input(msg))
@@ -49,12 +54,28 @@ def txtcor(txt, cor=bra):
 
 #Interface
 def cabeçalho(txt, tam=42, cor=bra):
+    '''
+    -> Cria um cabeçalho formatado
+    :param txt: título
+    :param tam: tamanho do cabeçalho
+    :param cor: cor a ser usada
+    :return: cabeçalho formatado
+    '''
     print(cor(linha(tam)))
     print(cor(f'{txt}'.center(tam)))
     print(cor(linha(tam)))
 
 
 def menu(lista, tam=42, cor1=bra, cor2=bra, cor3=bra):
+    '''
+    -> Cria um menu formatado
+    :param lista: opções do menu
+    :param tam: tamanho do menu
+    :param cor1: cor dos números
+    :param cor2: cor do txt do menu
+    :param cor3: cor da leitura de opção
+    :return: menu formatado
+    '''
     cabeçalho('MENU PRINCIPAL', tam)
     c = 1
     for item in lista:

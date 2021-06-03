@@ -1,4 +1,9 @@
 def leiaint(msg):
+    '''
+    -> Tenta ler o valor
+    :param msg: valor a ser lido
+    :return: o valor ou indica o erro
+    '''
     while True:
         try:
             n = int(input(msg))
@@ -12,6 +17,11 @@ def leiaint(msg):
 
 
 def leiafloat(msg):
+    '''
+    -> Tenta ler o valor e o válida
+    :param msg: valor a ser lido
+    :return: o valor ou indica o erro
+    '''
     while True:
         try:
             n = str(input(msg)).strip().replace(',', '.')
