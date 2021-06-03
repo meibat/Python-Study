@@ -63,4 +63,3 @@ def menu(lista, tam=42, cor1=bra, cor2=bra, cor3=bra):
     print(linha(tam))
     opc = leiaint(cor3('Sua opção: '))
     return opc
-
