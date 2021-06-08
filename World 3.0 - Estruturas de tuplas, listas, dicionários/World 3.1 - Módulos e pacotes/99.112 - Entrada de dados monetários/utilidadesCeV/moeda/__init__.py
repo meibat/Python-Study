@@ -24,10 +24,10 @@ def diminuir(preço=0, taxa=0, formato=False):
 
 def dobro(preço=0, formato=False):
     '''
-
-    :param preço:
-    :param formato:
-    :return:
+    -> Dobra o valor
+    :param preço: valor a ser dobrado
+    :param formato: deixa o valor formatado em dinheiro
+    :return: o valor dobrado
     '''
     resultado = preço*2
     return resultado if formato is False else moeda(resultado)
@@ -36,9 +36,9 @@ def dobro(preço=0, formato=False):
 def metade(preço=0, formato=False):
     '''
 
-    :param preço:
-    :param formato:
-    :return:
+    :param preço: valor a ser dividido ao meio
+    :param formato: deixa o valor formatado em dinheiro
+    :return: valor dividido ao meio
     '''
     resultado = preço/2
     return resultado if formato is False else moeda(resultado)
@@ -47,9 +47,9 @@ def metade(preço=0, formato=False):
 def moeda(preço=0, moeda='R$'):
     '''
 
-    :param preço:
-    :param moeda:
-    :return:
+    :param preço: valor a ser formatado
+    :param moeda: moeda a ser usada
+    :return: preço formatado
     '''
     return f'{moeda}{preço:.2f}'.replace('.', ',')
 
@@ -57,10 +57,10 @@ def moeda(preço=0, moeda='R$'):
 def resumo(valor=0, aumento=10, diminui=5):
     '''
 
-    :param valor:
-    :param aumento:
-    :param diminui:
-    :return:
+    :param valor: valor principal
+    :param aumento: quanto o valor deve ser aumentado
+    :param diminui: quanto o valor deve ser diminuido
+    :return: Resumo com o valor aumentado e diminuido
     '''
     print('-'*30)
     print('RESUMO DO VALOR'.center(30))
