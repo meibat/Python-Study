@@ -46,7 +46,7 @@ def lerArquivo(nome_arq):
             for linha in a:
                 dado = linha.split(';')
                 dado[7] = dado[7].replace('\n', '')
-                print(f'{dado[0]:<3}{dado[1]:<10}{dado[2]:<15}{dado[3]:<15}{dado[4]:<10}{dado[5]:<10}{dado[7]}')
+                print(f'{dado[0]:<15}{dado[1]:<15}{dado[3]:<10}{dado[4]:<15}{dado[5]:<15}{dado[7]}')
         except:
             txtcor('Erro ao ler o arquivo!', verm)
     finally:
@@ -73,3 +73,36 @@ def cadastrar(arq, nome, nasc=0, idade=0, ctps=0,contra=0, sal=0, aposen=0, cpf=
         else:
             print(f'Novo regristo de {nome} adicionado.')
             a.close()
+
+
+#Funções específicas
+def Ver_cadastro(arquivo):
+    cabeçalho('cadastro', 80)
+    tabela(f'{"NOME":<10}{"ANO DE NASC":<15}{"CONTRATAÇÃO":<15}{"SALÁRIO":<15}{"CTPS":<15}{"CPF"}', 80)
+    lerArquivo(arquivo)
+
+
+def Ler_aposentadoria(arquivo, tam):
+    Ver_cadastro(arquivo)
+    linha(tam)
+    arquivo = open(arquivo, 'r')
+    while True:
+        trabalhadores = arquivo.read()
+        trabalhadores = trabalhadores.split('\n')
+        print(trabalhadores)  # divide as linhas
+        linha(40)
+        qual_tra = str(input('Quer ver a idade de aposentadoria de qual trabalhador? ')).lower().strip()
+        for t in trabalhadores:
+            #print(t)escreve o que ta na lista
+            lista_trabalhador = t.split(';')
+            #print(lista_trabalhador)divide o conteúdo da lista
+            trabalhador = lista_trabalhador[0]
+            #print(trabalhador)nome do trabalhador
+            if qual_tra == trabalhador:
+                nome = trabalhador
+                aposentadoria = lista_trabalhador[6]
+            else:
+                nome = ''
+                aposentadoria = ''
+                print('erro')
+        print(nome, aposentadoria, 'FIM')

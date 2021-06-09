@@ -42,7 +42,7 @@ def leiafloat(msg):
 def nome():
     valido = False
     while not valido:
-        n = str(input('Nome: ')).strip()
+        n = str(input('Nome: ')).strip().lower()
         if n.isnumeric():
             txtcor('ERRO: Nome inválido!', verm)
         elif n == '':
